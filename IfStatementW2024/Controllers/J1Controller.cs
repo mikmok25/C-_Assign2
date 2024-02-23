@@ -12,6 +12,19 @@ namespace IfStatementW2024.Controllers
         [HttpGet]
         [Route("api/J1/Menu/{burger}/{drink}/{side}/{dessert}")]
 
+        /// <summary>
+        /// Calculates the total calorie count based on choices of burger, drink, side, and dessert.
+        /// </summary>
+        /// <param name="burger">The choice of burger (1 for Cheeseburger, 2 for Fish Burger, 3 for Veggie Burger, 4 for no burger)</param>
+        /// <param name="drink">The choice of drink (1 for Soft Drink, 2 for Orange Juice, 3 for Milk, 4 for no drink)</param>
+        /// <param name="side">The choice of side order (1 for Fries, 2 for Baked Potato, 3 for Chef Salad, 4 for no side order)</param>
+        /// <param name="dessert">The choice of dessert (1 for Apple Pie, 2 for Sundae, 3 for Fruit Cup, 4 for No Dessert)</param>
+        /// <returns>The total calorie count based on the chosen items</returns>
+        /// <example>
+        ///     GET : /api/J1/Menu/4/4/4/4      ->      "Your total calorie count is 0"
+        ///     GET : /api/J1/Menu/1/2/3/4      ->      "Your total calorie count is 691"
+        ///     
+        /// </example>
         public string Menu(int burger, int drink, int side, int dessert)
         {   
             int burgerCalories;
